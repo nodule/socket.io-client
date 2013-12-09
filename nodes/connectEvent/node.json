@@ -1,5 +1,5 @@
 {
-  "name":"on",
+  "name":"connectEvent",
   "ns":"socket.io-client",
   "description":"Socket.io Client On Event",
   "ports":{

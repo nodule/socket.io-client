@@ -77,7 +77,7 @@
       },
       "description": "Socket.io Client On Event",
       "ns": "socket.io-client",
-      "name": "on",
+      "name": "connectEvent",
       "fn": "output = [input.socket, 'on', input.event]\n"
     },
     {
