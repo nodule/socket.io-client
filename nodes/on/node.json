@@ -1,0 +1,34 @@
+{
+  "name":"on",
+  "ns":"socket.io-client",
+  "description":"Acts upon the specified `on` event",
+  "phrases": {
+    "active": "Reacting on {input.event} event"
+  },
+  "ports":{
+    "input":{
+      "socket":{
+        "type":"function",
+        "title":"io socket server handle",
+        "description":"Expects a io socket server node.",
+        "readonly": true,
+        "required": true
+      },
+      "event":{
+        "type":"string",
+        "enum": [
+          "connect"
+        ],
+        "title":"On Event",
+        "description":"Reacts on the `on` event specified.",
+        "required": true
+      }
+    },
+    "output":{
+      "out":{
+        "type":"any",
+        "title":"Output"
+      }
+    }
+  }
+}

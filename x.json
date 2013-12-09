@@ -1,0 +1,146 @@
+{
+  "name": "socket-io-client",
+  "description": "Socket.io Client nodes for Chiχ",
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nodule/socket.io-client.git"
+  },
+  "dependencies": {
+    "socket.io-client": "0.x.x"
+  },
+  "nodes": [
+    {
+      "ports": {
+        "input": {
+          "url": {
+            "type": "string",
+            "format": "uri",
+            "title": "Url",
+            "description": "The URL to listen on.",
+            "required": true
+          }
+        },
+        "output": {
+          "socket": {
+            "type": "function",
+            "title": "io socket client object"
+          }
+        }
+      },
+      "phrases": {
+        "active": "Creating socket io client"
+      },
+      "require": {
+        "socket.io-client": "latest"
+      },
+      "description": "Creates an io socket client object",
+      "ns": "socket.io-client",
+      "name": "connect",
+      "fn": "output = { socket: socket_io_client.connect(input.url) }\n"
+    },
+    {
+      "ports": {
+        "input": {
+          "socket": {
+            "type": "function",
+            "title": "io socket client handle",
+            "description": "Expects a io socket client node.",
+            "readonly": true,
+            "required": true
+          },
+          "event": {
+            "type": "string",
+            "enum": [
+              "connect",
+              "message",
+              "reconnect",
+              "error",
+              "disconnect",
+              "connecting",
+              "connect_failed",
+              "reconnect_failed",
+              "reconnecting",
+              "anything"
+            ],
+            "title": "io socket client on events",
+            "description": "Select an on event and provide an output function to the out port.",
+            "required": true
+          }
+        },
+        "output": {
+          "out": {
+            "type": "any",
+            "title": "Output Object"
+          }
+        }
+      },
+      "description": "Socket.io Client On Event",
+      "ns": "socket.io-client",
+      "name": "on",
+      "fn": "output = [input.socket, 'on', input.event]\n"
+    },
+    {
+      "ports": {
+        "input": {
+          "socket": {
+            "type": "function",
+            "title": "io socket handle",
+            "description": "Expects an socket.io socket node.",
+            "readonly": true,
+            "required": true
+          },
+          "message": {
+            "type": "any",
+            "title": "A message to send",
+            "required": true
+          }
+        },
+        "output": {}
+      },
+      "phrases": {
+        "active": "Sending message to server"
+      },
+      "description": "Sends a message to the server",
+      "ns": "socket.io-client",
+      "name": "emit",
+      "fn": "input.socket.emit(input.message);\n"
+    },
+    {
+      "ports": {
+        "input": {
+          "socket": {
+            "type": "function",
+            "title": "io socket server handle",
+            "description": "Expects a io socket server node.",
+            "readonly": true,
+            "required": true
+          },
+          "event": {
+            "type": "string",
+            "enum": [
+              "connect"
+            ],
+            "title": "On Event",
+            "description": "Reacts on the `on` event specified.",
+            "required": true
+          }
+        },
+        "output": {
+          "out": {
+            "type": "any",
+            "title": "Output"
+          }
+        }
+      },
+      "phrases": {
+        "active": "Reacting on {input.event} event"
+      },
+      "description": "Acts upon the specified `on` event",
+      "ns": "socket.io-client",
+      "name": "on",
+      "fn": "output = [input.io.sockets, 'on', input.event]\n"
+    }
+  ],
+  "twigs": []
+}

@@ -1,0 +1,27 @@
+{
+  "name": "nodule-socket.io-client",
+  "description": "Socket.io Client nodes for Chiχ",
+  "author": "Rob Halff <rob.halff@gmail.com>",
+  "version": "0.0.1",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nodule/socket.io-client.git"
+  },
+  "engines": {
+    "node": ">=0.6.0"
+  },
+  "dependencies": {
+    "socket.io-client": "0.x.x"
+  },
+  "devDependencies": {
+    "chit": "0.x.x"
+  },
+  "main": "x",
+  "scripts": {
+    "test": "chit"
+  },
+  "chix": {
+    "name": "socket-io-client"
+  }
+}
