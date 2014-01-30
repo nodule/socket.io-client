@@ -1,1 +1,3 @@
-output = { socket: socket_io_client.connect(input.url) }
+output = {
+  socket: socket_io_client.connect(input.url)
+}
