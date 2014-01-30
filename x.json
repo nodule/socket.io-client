@@ -37,7 +37,7 @@
       "description": "Creates an io socket client object",
       "ns": "socket.io-client",
       "name": "connect",
-      "fn": "output = { socket: socket_io_client.connect(input.url) }\n"
+      "fn": "output = {\n  socket: socket_io_client.connect(input.url)\n}\n"
     },
     {
       "ports": {
