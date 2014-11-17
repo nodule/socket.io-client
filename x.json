@@ -11,6 +11,11 @@
   },
   "nodes": [
     {
+      "dependencies": {
+        "npm": {
+          "socket.io-client": "latest"
+        }
+      },
       "ports": {
         "input": {
           "url": {
@@ -30,9 +35,6 @@
       },
       "phrases": {
         "active": "Creating socket io client"
-      },
-      "require": {
-        "socket.io-client": "latest"
       },
       "description": "Creates an io socket client object",
       "ns": "socket.io-client",

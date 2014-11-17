@@ -1,28 +1,30 @@
 {
-  "name":"connect",
-  "ns":"socket.io-client",
-  "description":"Creates an io socket client object",
-  "require":{
-    "socket.io-client":"latest"
-  },
+  "name": "connect",
+  "ns": "socket.io-client",
+  "description": "Creates an io socket client object",
   "phrases": {
     "active": "Creating socket io client"
   },
-  "ports":{
-    "input":{
-      "url":{
-        "type":"string",
-        "format":"uri",
-        "title":"Url",
-        "description":"The URL to listen on.",
+  "ports": {
+    "input": {
+      "url": {
+        "type": "string",
+        "format": "uri",
+        "title": "Url",
+        "description": "The URL to listen on.",
         "required": true
       }
     },
-    "output":{
-      "socket":{
-        "type":"function",
-        "title":"io socket client object"
+    "output": {
+      "socket": {
+        "type": "function",
+        "title": "io socket client object"
       }
+    }
+  },
+  "dependencies": {
+    "npm": {
+      "socket.io-client": "latest"
     }
   }
 }

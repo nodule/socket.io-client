@@ -1,18 +1,18 @@
 {
-  "name":"connectEvent",
-  "ns":"socket.io-client",
-  "description":"Socket.io Client On Event",
-  "ports":{
-    "input":{
-      "socket":{
-        "type":"function",
-        "title":"io socket client handle",
-        "description":"Expects a io socket client node.",
+  "name": "connectEvent",
+  "ns": "socket.io-client",
+  "description": "Socket.io Client On Event",
+  "ports": {
+    "input": {
+      "socket": {
+        "type": "function",
+        "title": "io socket client handle",
+        "description": "Expects a io socket client node.",
         "readonly": true,
         "required": true
       },
-      "event":{
-        "type":"string",
+      "event": {
+        "type": "string",
         "enum": [
           "connect",
           "message",
@@ -25,15 +25,15 @@
           "reconnecting",
           "anything"
         ],
-        "title":"io socket client on events",
-        "description":"Select an on event and provide an output function to the out port.",
+        "title": "io socket client on events",
+        "description": "Select an on event and provide an output function to the out port.",
         "required": true
       }
     },
-    "output":{
-      "out":{
-        "type":"any",
-        "title":"Output Object"
+    "output": {
+      "out": {
+        "type": "any",
+        "title": "Output Object"
       }
     }
   }
