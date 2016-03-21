@@ -1,1 +1,1 @@
-input.socket.emit(input.message);
+$.socket.emit($.message);

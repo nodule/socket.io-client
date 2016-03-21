@@ -1,1 +1,1 @@
-output = [input.io.sockets, 'on', input.event]
+output = [$.io.sockets, 'on', $.event]

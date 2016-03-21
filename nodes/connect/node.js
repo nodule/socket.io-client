@@ -1,3 +1,3 @@
 output = {
-  socket: socket_io_client.connect(input.url)
+  socket: socket_io_client.connect($.url)
 }
