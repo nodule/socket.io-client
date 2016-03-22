@@ -39,7 +39,7 @@
       "description": "Creates an io socket client object",
       "ns": "socket.io-client",
       "name": "connect",
-      "fn": "output = {\n  socket: socket_io_client.connect(input.url)\n}\n"
+      "fn": "output = {socket: $.create(socket_io_client.connect($.url))}\n"
     },
     {
       "ports": {
@@ -80,7 +80,7 @@
       "description": "Socket.io Client On Event",
       "ns": "socket.io-client",
       "name": "connectEvent",
-      "fn": "output = [input.socket, 'on', input.event]\n"
+      "fn": "output = [$.socket, 'on', $.event]\n"
     },
     {
       "ports": {
@@ -106,7 +106,7 @@
       "description": "Sends a message to the server",
       "ns": "socket.io-client",
       "name": "emit",
-      "fn": "input.socket.emit(input.message);\n"
+      "fn": "output = function() {\n  $.socket.emit($.message);\n}\n"
     },
     {
       "ports": {
@@ -141,7 +141,7 @@
       "description": "Acts upon the specified `on` event",
       "ns": "socket.io-client",
       "name": "on",
-      "fn": "output = [input.io.sockets, 'on', input.event]\n"
+      "fn": "output = [$.io.sockets, 'on', $.event]\n"
     }
   ],
   "twigs": []

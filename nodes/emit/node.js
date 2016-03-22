@@ -1,1 +1,3 @@
-$.socket.emit($.message);
+output = function() {
+  $.socket.emit($.message);
+}
