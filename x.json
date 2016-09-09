@@ -11,10 +11,11 @@
   },
   "nodes": [
     {
-      "dependencies": {
-        "npm": {
-          "socket.io-client": "latest"
-        }
+      "name": "connect",
+      "ns": "socket.io-client",
+      "description": "Creates an io socket client object",
+      "phrases": {
+        "active": "Creating socket io client"
       },
       "ports": {
         "input": {
@@ -33,15 +34,17 @@
           }
         }
       },
-      "phrases": {
-        "active": "Creating socket io client"
+      "dependencies": {
+        "npm": {
+          "socket.io-client": "latest"
+        }
       },
-      "description": "Creates an io socket client object",
-      "ns": "socket.io-client",
-      "name": "connect",
       "fn": "output = {socket: $.create(socket_io_client.connect($.url))}\n"
     },
     {
+      "name": "connectEvent",
+      "ns": "socket.io-client",
+      "description": "Socket.io Client On Event",
       "ports": {
         "input": {
           "socket": {
@@ -77,12 +80,15 @@
           }
         }
       },
-      "description": "Socket.io Client On Event",
-      "ns": "socket.io-client",
-      "name": "connectEvent",
       "fn": "output = [$.socket, 'on', $.event]\n"
     },
     {
+      "name": "emit",
+      "ns": "socket.io-client",
+      "description": "Sends a message to the server",
+      "phrases": {
+        "active": "Sending message to server"
+      },
       "ports": {
         "input": {
           "socket": {
@@ -100,15 +106,15 @@
         },
         "output": {}
       },
-      "phrases": {
-        "active": "Sending message to server"
-      },
-      "description": "Sends a message to the server",
-      "ns": "socket.io-client",
-      "name": "emit",
       "fn": "output = function() {\n  $.socket.emit($.message);\n}\n"
     },
     {
+      "name": "on",
+      "ns": "socket.io-client",
+      "description": "Acts upon the specified `on` event",
+      "phrases": {
+        "active": "Reacting on {input.event} event"
+      },
       "ports": {
         "input": {
           "socket": {
@@ -135,14 +141,7 @@
           }
         }
       },
-      "phrases": {
-        "active": "Reacting on {input.event} event"
-      },
-      "description": "Acts upon the specified `on` event",
-      "ns": "socket.io-client",
-      "name": "on",
       "fn": "output = [$.io.sockets, 'on', $.event]\n"
     }
-  ],
-  "twigs": []
+  ]
 }
